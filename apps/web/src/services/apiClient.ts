@@ -20,16 +20,24 @@ export class ApiClient {
     this.baseUrl = url.replace(/\/$/, '');
   }
 
+  private async safeJson<T>(res: Response): Promise<T> {
+    const text = await res.text();
+    if (!text || !text.trim()) {
+      throw new Error('Empty response body received from server');
+    }
+    return JSON.parse(text) as T;
+  }
+
   public async getHealth(): Promise<{ status: string; service: string; version: string }> {
     const res = await fetch(`${this.baseUrl}/api/health`);
     if (!res.ok) throw new Error(`Health check failed: ${res.statusText}`);
-    return res.json();
+    return this.safeJson(res);
   }
 
   public async listDevices(): Promise<DeviceInfo[]> {
     const res = await fetch(`${this.baseUrl}/api/devices`);
     if (!res.ok) throw new Error(`Failed to list devices: ${res.statusText}`);
-    return res.json();
+    return this.safeJson(res);
   }
 
   public async connectDevice(payload: {
@@ -45,7 +53,7 @@ export class ApiClient {
       body: JSON.stringify(payload),
     });
     if (!res.ok) throw new Error(`Failed to connect device: ${res.statusText}`);
-    return res.json();
+    return this.safeJson(res);
   }
 
   public async getFirmwareCatalog(params?: {
@@ -61,7 +69,7 @@ export class ApiClient {
     const url = `${this.baseUrl}/api/firmware/catalog${query.toString() ? `?${query.toString()}` : ''}`;
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Failed to fetch firmware catalog: ${res.statusText}`);
-    return res.json();
+    return this.safeJson(res);
   }
 
   public async verifyFirmwareCompatibility(payload: {
@@ -75,7 +83,7 @@ export class ApiClient {
       body: JSON.stringify(payload),
     });
     if (!res.ok) throw new Error(`Failed to verify firmware compatibility: ${res.statusText}`);
-    return res.json();
+    return this.safeJson(res);
   }
 
   public async verifyFirmwareChecksum(payload: {
@@ -88,13 +96,13 @@ export class ApiClient {
       body: JSON.stringify(payload),
     });
     if (!res.ok) throw new Error(`Failed to verify firmware checksum: ${res.statusText}`);
-    return res.json();
+    return this.safeJson(res);
   }
 
   public async getRecoveryGuides(): Promise<RecoveryGuide[]> {
     const res = await fetch(`${this.baseUrl}/api/recovery/guides`);
     if (!res.ok) throw new Error(`Failed to fetch recovery guides: ${res.statusText}`);
-    return res.json();
+    return this.safeJson(res);
   }
 
   public async verifyOwnership(payload: OwnershipVerification): Promise<VerificationResult> {
@@ -104,7 +112,7 @@ export class ApiClient {
       body: JSON.stringify(payload),
     });
     if (!res.ok) throw new Error(`Failed to verify ownership: ${res.statusText}`);
-    return res.json();
+    return this.safeJson(res);
   }
 
   public async createRecoveryAudit(payload: {
@@ -122,8 +130,9 @@ export class ApiClient {
       body: JSON.stringify(payload),
     });
     if (!res.ok) throw new Error(`Failed to record recovery audit: ${res.statusText}`);
-    return res.json();
+    return this.safeJson(res);
   }
 }
 
 export const apiClient = new ApiClient();
+
