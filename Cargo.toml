@@ -1,0 +1,56 @@
+[workspace]
+resolver = "2"
+members = [
+    "backend/rust-api",
+    "packages/shared-types",
+    "packages/protocol-adapters",
+    "packages/device-registry",
+    "packages/device-engine",
+    "packages/recovery-workflows",
+    "packages/firmware-manager",
+    "apps/desktop/src-tauri",
+    "tests",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Universal Android Tool Team"]
+license = "Apache-2.0"
+
+[workspace.dependencies]
+# Internal workspace crates
+uat-shared-types = { path = "packages/shared-types" }
+uat-protocol-adapters = { path = "packages/protocol-adapters" }
+uat-device-registry = { path = "packages/device-registry" }
+uat-device-engine = { path = "packages/device-engine" }
+uat-recovery-workflows = { path = "packages/recovery-workflows" }
+uat-firmware-manager = { path = "packages/firmware-manager" }
+
+# Async runtime & networking
+tokio = { version = "1.43", features = ["full"] }
+axum = { version = "0.8", features = ["ws"] }
+tower = "0.5"
+tower-http = { version = "0.6", features = ["cors", "trace"] }
+async-trait = "0.1"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Diagnostics & Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Error Handling
+thiserror = "2.0"
+anyhow = "1.0"
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.12", features = ["v4", "serde"] }
+sha2 = "0.10"
+
+# Desktop / Tauri dependencies
+tauri = { version = "2.2", features = [] }
+tauri-build = { version = "2.0", features = [] }

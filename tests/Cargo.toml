@@ -1,0 +1,18 @@
+[package]
+name = "uat-integration-tests"
+version.workspace = true
+edition.workspace = true
+publish = false
+
+[[test]]
+name = "integration_tests"
+path = "integration_tests.rs"
+
+[dependencies]
+uat-shared-types = { workspace = true }
+uat-device-engine = { workspace = true }
+uat-device-registry = { workspace = true }
+uat-recovery-workflows = { workspace = true }
+uat-firmware-manager = { workspace = true }
+uat-protocol-adapters = { workspace = true }
+tokio = { workspace = true }

@@ -1,0 +1,23 @@
+{
+  "name": "universal-android-tool",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Universal Android Tool (UAT) - Cross-platform Android Servicing Platform",
+  "packageManager": "pnpm@12.16.1",
+  "scripts": {
+    "dev": "pnpm --filter @uat/web dev",
+    "dev:web": "pnpm --filter @uat/web dev",
+    "dev:desktop": "pnpm --filter @uat/desktop tauri dev",
+    "dev:backend": "cargo run -p uat-rust-api",
+    "build": "pnpm --recursive run build",
+    "build:web": "pnpm --filter @uat/web build",
+    "build:desktop": "pnpm --filter @uat/desktop tauri build",
+    "build:backend": "cargo build --release",
+    "test": "cargo test --workspace && pnpm --recursive --if-present run test",
+    "lint": "cargo clippy --workspace && pnpm --recursive --if-present run lint",
+    "typecheck": "pnpm --recursive --if-present run typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

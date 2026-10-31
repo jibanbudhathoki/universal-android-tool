@@ -1,0 +1,499 @@
+[
+  {
+    "id": "samsung",
+    "name": "Samsung",
+    "vendor_ids": [1256, 1204],
+    "known_products": [
+      {
+        "product_id": 26720,
+        "model_name": "Galaxy S Series / MTP + ADB",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "Exynos / Snapdragon"
+      },
+      {
+        "product_id": 26718,
+        "model_name": "Galaxy Standard MTP",
+        "supported_modes": ["mtp"],
+        "hardware_platform": "Exynos / Snapdragon"
+      },
+      {
+        "product_id": 26717,
+        "model_name": "Galaxy PTP Camera Mode",
+        "supported_modes": ["ptp"],
+        "hardware_platform": "Exynos / Snapdragon"
+      },
+      {
+        "product_id": 26736,
+        "model_name": "Galaxy Odin / Download Mode",
+        "supported_modes": ["download"],
+        "hardware_platform": "Exynos / Snapdragon"
+      },
+      {
+        "product_id": 26113,
+        "model_name": "Galaxy Bootloader Download Mode",
+        "supported_modes": ["download"],
+        "hardware_platform": "Exynos / Snapdragon"
+      },
+      {
+        "product_id": 26743,
+        "model_name": "Galaxy ADB Interface",
+        "supported_modes": ["adb"],
+        "hardware_platform": "Exynos / Snapdragon"
+      }
+    ],
+    "recovery_support_portal": "https://www.samsung.com/us/support/troubleshooting/TSG01001402/",
+    "support_notes": "Use Samsung Smart Switch or official Odin for authorized firmware recovery. Recovery mode: Hold Volume Up + Power while connected to PC.",
+    "fastboot_supported": false,
+    "edl_or_download_mode": "Odin Download Mode (Hold Vol Down + Vol Up + Connect USB)"
+  },
+  {
+    "id": "google",
+    "name": "Google Pixel",
+    "vendor_ids": [6353],
+    "known_products": [
+      {
+        "product_id": 20193,
+        "model_name": "Pixel MTP + ADB Debugging",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "Google Tensor / Titan M2"
+      },
+      {
+        "product_id": 20192,
+        "model_name": "Pixel File Transfer (MTP)",
+        "supported_modes": ["mtp"],
+        "hardware_platform": "Google Tensor / Titan M2"
+      },
+      {
+        "product_id": 20042,
+        "model_name": "Pixel Composite ADB Interface",
+        "supported_modes": ["adb"],
+        "hardware_platform": "Google Tensor / Titan M2"
+      },
+      {
+        "product_id": 53249,
+        "model_name": "Pixel Fastboot Bootloader Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "Google Tensor / Titan M2"
+      },
+      {
+        "product_id": 53250,
+        "model_name": "Pixel Fastbootd Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "Google Tensor / Titan M2"
+      },
+      {
+        "product_id": 20197,
+        "model_name": "Pixel Recovery Mode",
+        "supported_modes": ["recovery"],
+        "hardware_platform": "Google Tensor / Titan M2"
+      },
+      {
+        "product_id": 20198,
+        "model_name": "Pixel ADB Sideload Mode",
+        "supported_modes": ["adb", "recovery"],
+        "hardware_platform": "Google Tensor / Titan M2"
+      }
+    ],
+    "recovery_support_portal": "https://support.google.com/pixelphone/answer/4596836",
+    "support_notes": "Official WebUSB Android Flash Tool available at flash.android.com. Bootloader entry: Hold Power + Volume Down.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "Fastboot Mode (Power + Volume Down) / Fastbootd"
+  },
+  {
+    "id": "xiaomi",
+    "name": "Xiaomi",
+    "vendor_ids": [10007, 10991],
+    "known_products": [
+      {
+        "product_id": 65352,
+        "model_name": "Xiaomi MTP + ADB Debugging",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 65344,
+        "model_name": "Xiaomi File Transfer (MTP)",
+        "supported_modes": ["mtp"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 65296,
+        "model_name": "Xiaomi Fastboot Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 65416,
+        "model_name": "Xiaomi Mi Assistant / Recovery Sideload",
+        "supported_modes": ["recovery", "adb"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 36930,
+        "model_name": "Xiaomi Diagnostic / ADB Port",
+        "supported_modes": ["adb"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 36931,
+        "model_name": "Xiaomi Fastboot Interface",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      }
+    ],
+    "recovery_support_portal": "https://www.mi.com/global/support",
+    "support_notes": "Mi Flash Tool official support. Bootloader unlock requires verified Mi Account waiting period. Fastboot: Hold Power + Volume Down.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "Fastboot Mode (Power + Volume Down) / EDL 9008 via test point"
+  },
+  {
+    "id": "redmi",
+    "name": "Redmi",
+    "vendor_ids": [10007, 10991],
+    "known_products": [
+      {
+        "product_id": 65352,
+        "model_name": "Redmi Note Series (MTP + ADB)",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "Snapdragon / Helio / Dimensity"
+      },
+      {
+        "product_id": 65296,
+        "model_name": "Redmi Fastboot Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "Snapdragon / Helio / Dimensity"
+      },
+      {
+        "product_id": 65416,
+        "model_name": "Redmi Recovery Mode",
+        "supported_modes": ["recovery"],
+        "hardware_platform": "Snapdragon / Helio / Dimensity"
+      }
+    ],
+    "recovery_support_portal": "https://www.mi.com/global/support",
+    "support_notes": "Official Xiaomi/Redmi servicing through Mi Assistant and authorized service centers.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "Fastboot Mode (Power + Volume Down)"
+  },
+  {
+    "id": "poco",
+    "name": "POCO",
+    "vendor_ids": [10007, 10991],
+    "known_products": [
+      {
+        "product_id": 65352,
+        "model_name": "POCO Device (MTP + ADB)",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 65296,
+        "model_name": "POCO Fastboot Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 65416,
+        "model_name": "POCO Recovery Sideload",
+        "supported_modes": ["recovery"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      }
+    ],
+    "recovery_support_portal": "https://www.po.co/global/support",
+    "support_notes": "Official POCO firmware restoration via authorized fastboot flashing.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "Fastboot Mode (Power + Volume Down)"
+  },
+  {
+    "id": "oppo",
+    "name": "OPPO",
+    "vendor_ids": [8907],
+    "known_products": [
+      {
+        "product_id": 10085,
+        "model_name": "OPPO Device (MTP + ADB)",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "ColorOS / Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 10084,
+        "model_name": "OPPO File Transfer (MTP)",
+        "supported_modes": ["mtp"],
+        "hardware_platform": "ColorOS / Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 10089,
+        "model_name": "OPPO Fastboot Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "ColorOS / Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 10100,
+        "model_name": "OPPO Recovery Mode",
+        "supported_modes": ["recovery"],
+        "hardware_platform": "ColorOS / Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 6,
+        "model_name": "OPPO Preloader Diagnostic",
+        "supported_modes": ["brom"],
+        "hardware_platform": "MediaTek"
+      }
+    ],
+    "recovery_support_portal": "https://support.oppo.com",
+    "support_notes": "Official ColorOS online firmware update available through authorized recovery mode.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "Fastboot / ColorOS Recovery (Power + Volume Down)"
+  },
+  {
+    "id": "vivo",
+    "name": "Vivo",
+    "vendor_ids": [11222, 3000],
+    "known_products": [
+      {
+        "product_id": 24578,
+        "model_name": "Vivo Smartphone (MTP + ADB)",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "FuntouchOS / OriginOS"
+      },
+      {
+        "product_id": 24577,
+        "model_name": "Vivo File Transfer (MTP)",
+        "supported_modes": ["mtp"],
+        "hardware_platform": "FuntouchOS / OriginOS"
+      },
+      {
+        "product_id": 24579,
+        "model_name": "Vivo Fastboot Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "FuntouchOS / OriginOS"
+      },
+      {
+        "product_id": 24580,
+        "model_name": "Vivo Recovery Sideload",
+        "supported_modes": ["recovery", "adb"],
+        "hardware_platform": "FuntouchOS / OriginOS"
+      },
+      {
+        "product_id": 3073,
+        "model_name": "Vivo Factory Diagnostic Mode",
+        "supported_modes": ["edl"],
+        "hardware_platform": "Snapdragon"
+      }
+    ],
+    "recovery_support_portal": "https://www.vivo.com/support",
+    "support_notes": "Vivo Fastboot / Recovery recovery mode: Hold Power + Volume Up until Vivo logo appears.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "Vivo Fastboot (Power + Volume Up)"
+  },
+  {
+    "id": "realme",
+    "name": "Realme",
+    "vendor_ids": [8907, 11222],
+    "known_products": [
+      {
+        "product_id": 10085,
+        "model_name": "Realme Smartphone (MTP + ADB)",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "realme UI / Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 10084,
+        "model_name": "Realme File Transfer (MTP)",
+        "supported_modes": ["mtp"],
+        "hardware_platform": "realme UI / Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 10089,
+        "model_name": "Realme Fastboot Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "realme UI / Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 10100,
+        "model_name": "Realme Recovery Mode",
+        "supported_modes": ["recovery"],
+        "hardware_platform": "realme UI / Snapdragon / Dimensity"
+      }
+    ],
+    "recovery_support_portal": "https://www.realme.com/support",
+    "support_notes": "Realme UI recovery assistance. Fastboot accessed via Power + Volume Down.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "Fastboot Mode (Power + Volume Down)"
+  },
+  {
+    "id": "motorola",
+    "name": "Motorola",
+    "vendor_ids": [8888],
+    "known_products": [
+      {
+        "product_id": 11908,
+        "model_name": "Moto Series (MTP + ADB)",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 11906,
+        "model_name": "Moto File Transfer (MTP)",
+        "supported_modes": ["mtp"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 11905,
+        "model_name": "Moto Fastboot Bootloader Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 11904,
+        "model_name": "Moto AP Fastboot Flash Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      },
+      {
+        "product_id": 11912,
+        "model_name": "Moto ADB Debugging Interface",
+        "supported_modes": ["adb"],
+        "hardware_platform": "Snapdragon / Dimensity"
+      }
+    ],
+    "recovery_support_portal": "https://motorola-global-portal.custhelp.com",
+    "support_notes": "Official Lenovo Rescue and Smart Assistant (LMSA) compatible. Fastboot: Hold Volume Down + Power.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "AP Fastboot Flash Mode (Volume Down + Power)"
+  },
+  {
+    "id": "oneplus",
+    "name": "OnePlus",
+    "vendor_ids": [10864, 10007, 8907],
+    "known_products": [
+      {
+        "product_id": 61443,
+        "model_name": "OnePlus Device (MTP + ADB)",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "OxygenOS / Snapdragon"
+      },
+      {
+        "product_id": 61441,
+        "model_name": "OnePlus File Transfer (MTP)",
+        "supported_modes": ["mtp"],
+        "hardware_platform": "OxygenOS / Snapdragon"
+      },
+      {
+        "product_id": 36881,
+        "model_name": "OnePlus Fastboot Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "OxygenOS / Snapdragon"
+      },
+      {
+        "product_id": 61454,
+        "model_name": "OnePlus Recovery Sideload",
+        "supported_modes": ["recovery", "adb"],
+        "hardware_platform": "OxygenOS / Snapdragon"
+      },
+      {
+        "product_id": 20199,
+        "model_name": "OnePlus Standard ADB Interface",
+        "supported_modes": ["adb"],
+        "hardware_platform": "OxygenOS / Snapdragon"
+      }
+    ],
+    "recovery_support_portal": "https://www.oneplus.com/support",
+    "support_notes": "OxygenOS official recovery support. Fastboot entry: Hold Power + Volume Up + Volume Down.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "Fastboot Mode (Power + Volume Up + Volume Down) / MSM Download Tool (EDL 9008)"
+  },
+  {
+    "id": "nokia",
+    "name": "Nokia",
+    "vendor_ids": [11780, 10507, 4187],
+    "known_products": [
+      {
+        "product_id": 49190,
+        "model_name": "Nokia Android (MTP + ADB)",
+        "supported_modes": ["mtp", "adb"],
+        "hardware_platform": "Android One / Snapdragon / Unisoc"
+      },
+      {
+        "product_id": 49189,
+        "model_name": "Nokia Fastboot Mode",
+        "supported_modes": ["fastboot"],
+        "hardware_platform": "Android One / Snapdragon / Unisoc"
+      },
+      {
+        "product_id": 49191,
+        "model_name": "Nokia File Transfer (MTP)",
+        "supported_modes": ["mtp"],
+        "hardware_platform": "Android One / Snapdragon / Unisoc"
+      },
+      {
+        "product_id": 49200,
+        "model_name": "Nokia Recovery Mode",
+        "supported_modes": ["recovery"],
+        "hardware_platform": "Android One / Snapdragon / Unisoc"
+      }
+    ],
+    "recovery_support_portal": "https://www.nokia.com/phones/support",
+    "support_notes": "HMD Global Android One / Android smartphone official care. Fastboot: Hold Volume Down + Power.",
+    "fastboot_supported": true,
+    "edl_or_download_mode": "Fastboot Mode (Power + Volume Down)"
+  },
+  {
+    "id": "qualcomm",
+    "name": "Qualcomm Diagnostic",
+    "vendor_ids": [1478],
+    "known_products": [
+      {
+        "product_id": 36872,
+        "model_name": "Qualcomm HS-USB QDLoader 9008",
+        "supported_modes": ["edl"],
+        "hardware_platform": "Qualcomm Snapdragon"
+      },
+      {
+        "product_id": 36878,
+        "model_name": "Qualcomm HS-USB Diagnostics 900E",
+        "supported_modes": ["diagnostic"],
+        "hardware_platform": "Qualcomm Snapdragon"
+      },
+      {
+        "product_id": 36907,
+        "model_name": "Qualcomm HS-USB Diagnostic + ADB",
+        "supported_modes": ["adb", "diagnostic"],
+        "hardware_platform": "Qualcomm Snapdragon"
+      }
+    ],
+    "recovery_support_portal": "https://www.qualcomm.com/support",
+    "support_notes": "Emergency Download (EDL) 9008 emergency diagnostic interface for Qualcomm platforms.",
+    "fastboot_supported": false,
+    "edl_or_download_mode": "EDL 9008 Mode (Short Test Point or OEM EDL Cable)"
+  },
+  {
+    "id": "mediatek",
+    "name": "MediaTek Diagnostic",
+    "vendor_ids": [3725],
+    "known_products": [
+      {
+        "product_id": 3,
+        "model_name": "MediaTek MTK USB Port (BROM Mode)",
+        "supported_modes": ["brom"],
+        "hardware_platform": "MediaTek Helio / Dimensity"
+      },
+      {
+        "product_id": 8192,
+        "model_name": "MediaTek Preloader USB VCOM Port",
+        "supported_modes": ["preloader"],
+        "hardware_platform": "MediaTek Helio / Dimensity"
+      },
+      {
+        "product_id": 8200,
+        "model_name": "MediaTek DA USB VCOM Port",
+        "supported_modes": ["da"],
+        "hardware_platform": "MediaTek Helio / Dimensity"
+      }
+    ],
+    "recovery_support_portal": "https://www.mediatek.com/products/smartphones",
+    "support_notes": "MediaTek BootROM (BROM) low-level hardware flashing interface for Dimensity and Helio SoCs.",
+    "fastboot_supported": false,
+    "edl_or_download_mode": "MediaTek BROM Mode (Hold Volume Down or Volume Up while plugging USB)"
+  }
+]
